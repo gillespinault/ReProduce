@@ -5,17 +5,25 @@
 <title>Programme Cycle Textile</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.3.0/github-markdown.min.css">
 <style>
-  body { display: flex; font-family: sans-serif; margin: 0; }
-  #nav { width: 300px; max-height: 100vh; overflow-y: auto; border-right: 1px solid #ccc; padding: 1rem; }
-  #content { flex: 1; padding: 1rem; }
-  details { margin-left: 1rem; }
-  a { cursor: pointer; color: #0366d6; text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  :root { --sidebar-width: 260px; }
+  body { display: grid; grid-template-columns: var(--sidebar-width) 1fr; margin: 0; font-family: Arial, sans-serif; height: 100vh; }
+  #nav { background: #f9f9f9; border-right: 1px solid #ddd; overflow-y: auto; padding: 1rem; }
+  #nav h1 { font-size: 1.2em; margin: 0 0 1rem; }
+  #search { width: 100%; padding: 0.3rem; margin-bottom: 1rem; }
+  #tree details { margin-left: 1rem; }
+  #tree a { cursor: pointer; color: #0366d6; text-decoration: none; display: block; padding: 0.2rem 0; }
+  #tree a.active { font-weight: bold; }
+  #tree a:hover { text-decoration: underline; }
+  #content { overflow-y: auto; padding: 1rem 2rem; }
 </style>
 </head>
 <body>
-  <nav id="nav"></nav>
-  <main id="content" class="markdown-body"></main>
+<nav id="nav">
+  <h1>Programme</h1>
+  <input type="text" id="search" placeholder="Rechercher...">
+  <div id="tree"></div>
+</nav>
+<main id="content" class="markdown-body"></main>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
@@ -23,14 +31,10 @@ async function loadTree() {
   try {
     const res = await fetch('fileIndex.json');
     const tree = await res.json();
-    buildNav(tree.children, document.getElementById('nav'));
-    // Load overview by default
+    buildNav(tree.children, document.getElementById('tree'));
     loadMarkdown('README.md');
   } catch (err) {
-    document.getElementById('content').innerHTML =
-      '<p>Erreur lors du chargement des fichiers. ' +
-      "Servez cette page via un serveur (ex: <code>python -m http.server</code>)." +
-      '</p>';
+    document.getElementById('content').innerHTML = '<p>Erreur lors du chargement des fichiers. Servez cette page via un serveur (ex: <code>python -m http.server</code>).</p>';
   }
 }
 
@@ -46,19 +50,21 @@ function buildNav(nodes, container) {
     } else if (node.type === 'file') {
       const link = document.createElement('a');
       link.textContent = formatName(node.name);
+      link.dataset.path = node.path;
       link.onclick = () => loadMarkdown(node.path);
-      const div = document.createElement('div');
-      div.style.marginLeft = '1rem';
-      div.appendChild(link);
-      container.appendChild(div);
+      container.appendChild(link);
     }
   });
 }
 
+let activeLink;
 async function loadMarkdown(path) {
   const res = await fetch(path);
   const text = await res.text();
   document.getElementById('content').innerHTML = marked.parse(text);
+  if (activeLink) activeLink.classList.remove('active');
+  activeLink = document.querySelector(`[data-path="${path}"]`);
+  if (activeLink) activeLink.classList.add('active');
   window.scrollTo(0,0);
 }
 
@@ -66,7 +72,25 @@ function formatName(name) {
   return name.replace(/-/g, ' ').replace(/\.md$/, '');
 }
 
-loadTree();
+function filterNav(term) {
+  const links = document.querySelectorAll('#tree a');
+  links.forEach(link => {
+    const match = link.textContent.toLowerCase().includes(term.toLowerCase());
+    link.style.display = match ? '' : 'none';
+  });
+  document.querySelectorAll('#tree details').forEach(d => {
+    const hasVisible = d.querySelector('a:not([style*="display: none"])');
+    d.style.display = hasVisible ? '' : 'none';
+  });
+}
+
+document.getElementById('search').addEventListener('input', e => filterNav(e.target.value));
+
+if (location.protocol === 'file:') {
+  document.getElementById('content').innerHTML = '<p>Cette visionneuse doit être servie via HTTP pour charger les fichiers. Lancez <code>python -m http.server</code> dans ce dossier puis ouvrez <a href="http://localhost:8000/documentation/cycle1-textile/index.html">http://localhost:8000/documentation/cycle1-textile/index.html</a>.</p>';
+} else {
+  loadTree();
+}
 </script>
 </body>
 </html>
