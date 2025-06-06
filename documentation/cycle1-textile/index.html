@@ -20,11 +20,18 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
 async function loadTree() {
-  const res = await fetch('fileIndex.json');
-  const tree = await res.json();
-  buildNav(tree.children, document.getElementById('nav'));
-  // Load overview by default
-  loadMarkdown('README.md');
+  try {
+    const res = await fetch('fileIndex.json');
+    const tree = await res.json();
+    buildNav(tree.children, document.getElementById('nav'));
+    // Load overview by default
+    loadMarkdown('README.md');
+  } catch (err) {
+    document.getElementById('content').innerHTML =
+      '<p>Erreur lors du chargement des fichiers. ' +
+      "Servez cette page via un serveur (ex: <code>python -m http.server</code>)." +
+      '</p>';
+  }
 }
 
 function buildNav(nodes, container) {
