@@ -1,0 +1,244 @@
+{
+  "type": "directory",
+  "name": "cycle1-textile",
+  "path": "",
+  "children": [
+    {
+      "type": "file",
+      "name": "README.md",
+      "path": "README.md"
+    },
+    {
+      "type": "directory",
+      "name": "phase1-lancement",
+      "path": "phase1-lancement",
+      "children": [
+        {
+          "type": "file",
+          "name": "README.md",
+          "path": "phase1-lancement/README.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine01-bootcamp-immersion-cadre-collaboratif-fondations-eco-circulaires.md",
+          "path": "phase1-lancement/semaine01-bootcamp-immersion-cadre-collaboratif-fondations-eco-circulaires.md"
+        }
+      ]
+    },
+    {
+      "type": "directory",
+      "name": "phase2-ideation",
+      "path": "phase2-ideation",
+      "children": [
+        {
+          "type": "file",
+          "name": "README.md",
+          "path": "phase2-ideation/README.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine02-exploration-des-besoins-opportunites-textiles-a-bruxelles-semaine-2-exploration-des-besoins-opportunites-textiles-a-bruxelles.md",
+          "path": "phase2-ideation/semaine02-exploration-des-besoins-opportunites-textiles-a-bruxelles-semaine-2-exploration-des-besoins-opportunites-textiles-a-bruxelles.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine03-innovation-matiere-textile-tempete-d-idees-creatives.md",
+          "path": "phase2-ideation/semaine03-innovation-matiere-textile-tempete-d-idees-creatives.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine04-de-l-idee-au-concept-structure-premiers-retours-terrain.md",
+          "path": "phase2-ideation/semaine04-de-l-idee-au-concept-structure-premiers-retours-terrain.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine05-convergence-decision-choix-strategique-de-l-offre-collective-textile.md",
+          "path": "phase2-ideation/semaine05-convergence-decision-choix-strategique-de-l-offre-collective-textile.md"
+        }
+      ]
+    },
+    {
+      "type": "directory",
+      "name": "phase3-developpement",
+      "path": "phase3-developpement",
+      "children": [
+        {
+          "type": "file",
+          "name": "README.md",
+          "path": "phase3-developpement/README.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine06-conception-detaillee-plan-de-prototypage.md",
+          "path": "phase3-developpement/semaine06-conception-detaillee-plan-de-prototypage.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine07-premier-prototype-avance-techniques-de-fabrication.md",
+          "path": "phase3-developpement/semaine07-premier-prototype-avance-techniques-de-fabrication.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine08-tests-utilisateurs-iteration-du-prototype.md",
+          "path": "phase3-developpement/semaine08-tests-utilisateurs-iteration-du-prototype.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine09-seconde-iteration-du-prototype-approfondissement-dfm.md",
+          "path": "phase3-developpement/semaine09-seconde-iteration-du-prototype-approfondissement-dfm.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine10-validation-de-la-gamme-organisation-de-la-production.md",
+          "path": "phase3-developpement/semaine10-validation-de-la-gamme-organisation-de-la-production.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine11-preparation-logistique-pre-serie-batch-zero.md",
+          "path": "phase3-developpement/semaine11-preparation-logistique-pre-serie-batch-zero.md"
+        }
+      ]
+    },
+    {
+      "type": "directory",
+      "name": "phase4-structuration",
+      "path": "phase4-structuration",
+      "children": [
+        {
+          "type": "file",
+          "name": "README.md",
+          "path": "phase4-structuration/README.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine12-modelisation-economique-circulaire-circular-bmc.md",
+          "path": "phase4-structuration/semaine12-modelisation-economique-circulaire-circular-bmc.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine13-proposition-de-valeur-circulaire-analyse-de-marche-approfondie.md",
+          "path": "phase4-structuration/semaine13-proposition-de-valeur-circulaire-analyse-de-marche-approfondie.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine14-strategie-de-prix-plan-financier-previsionnel.md",
+          "path": "phase4-structuration/semaine14-strategie-de-prix-plan-financier-previsionnel.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine15-structure-juridique-gouvernance-du-collectif.md",
+          "path": "phase4-structuration/semaine15-structure-juridique-gouvernance-du-collectif.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine16-strategie-de-communication-marketing-d-impact.md",
+          "path": "phase4-structuration/semaine16-strategie-de-communication-marketing-d-impact.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine17-preparation-du-lancement-canaux-de-vente.md",
+          "path": "phase4-structuration/semaine17-preparation-du-lancement-canaux-de-vente.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine18-lancement-de-l-offre-collective-premiers-feedbacks-marche.md",
+          "path": "phase4-structuration/semaine18-lancement-de-l-offre-collective-premiers-feedbacks-marche.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine19-analyse-des-premiers-resultats-ajustements-strategiques.md",
+          "path": "phase4-structuration/semaine19-analyse-des-premiers-resultats-ajustements-strategiques.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine20-consolidation-du-modele-economique-preparation-de-la-phase-de-production.md",
+          "path": "phase4-structuration/semaine20-consolidation-du-modele-economique-preparation-de-la-phase-de-production.md"
+        }
+      ]
+    },
+    {
+      "type": "directory",
+      "name": "phase5-production",
+      "path": "phase5-production",
+      "children": [
+        {
+          "type": "file",
+          "name": "README.md",
+          "path": "phase5-production/README.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine21-planification-lancement-de-la-production-en-petite-serie.md",
+          "path": "phase5-production/semaine21-planification-lancement-de-la-production-en-petite-serie.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine22-suivi-de-production-gestion-qualite-resolution-de-problemes.md",
+          "path": "phase5-production/semaine22-suivi-de-production-gestion-qualite-resolution-de-problemes.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine23-optimisation-des-flux-gestion-logistique-interne.md",
+          "path": "phase5-production/semaine23-optimisation-des-flux-gestion-logistique-interne.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine24-analyse-des-couts-de-production-reels-rentabilite.md",
+          "path": "phase5-production/semaine24-analyse-des-couts-de-production-reels-rentabilite.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine25-optimisation-continue-des-processus-documentation.md",
+          "path": "phase5-production/semaine25-optimisation-continue-des-processus-documentation.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine26-bilan-de-la-phase-de-production-preparation-de-la-suite.md",
+          "path": "phase5-production/semaine26-bilan-de-la-phase-de-production-preparation-de-la-suite.md"
+        }
+      ]
+    },
+    {
+      "type": "directory",
+      "name": "phase6-finalisation",
+      "path": "phase6-finalisation",
+      "children": [
+        {
+          "type": "file",
+          "name": "README.md",
+          "path": "phase6-finalisation/README.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine27-bilan-approfondi-du-projet-collectif-mesure-d-impact.md",
+          "path": "phase6-finalisation/semaine27-bilan-approfondi-du-projet-collectif-mesure-d-impact.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine28-strategie-de-perennisation-vision-modele-de-gouvernance-a-long-terme.md",
+          "path": "phase6-finalisation/semaine28-strategie-de-perennisation-vision-modele-de-gouvernance-a-long-terme.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine29-plan-de-developpement-futur-besoins-de-financement.md",
+          "path": "phase6-finalisation/semaine29-plan-de-developpement-futur-besoins-de-financement.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine30-documentation-finale-partage-des-savoirs-pour-reproduce.md",
+          "path": "phase6-finalisation/semaine30-documentation-finale-partage-des-savoirs-pour-reproduce.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine31-preparation-de-la-maker-faire-bilan-individuel.md",
+          "path": "phase6-finalisation/semaine31-preparation-de-la-maker-faire-bilan-individuel.md"
+        },
+        {
+          "type": "file",
+          "name": "semaine32-maker-faire-celebration-perspectives-futures.md",
+          "path": "phase6-finalisation/semaine32-maker-faire-celebration-perspectives-futures.md"
+        }
+      ]
+    }
+  ]
+}

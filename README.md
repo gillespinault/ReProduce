@@ -17,3 +17,14 @@ Ce dépôt regroupe la documentation du projet **ReProduce Brussels**. Les docum
 | `03 - Prompt_ReProduce _Piliers de Connaissance` | Fichier JSON décrivant les prompts pour les différents piliers de connaissance. |
 | `cycle1-textile/` | Dossier regroupant le parcours détaillé du Cycle 1 découpé par phase et par semaine. |
 
+## Visualiser le programme textile
+
+La page `documentation/cycle1-textile/index.html` propose une visionneuse moderne pour explorer le programme. Elle génère automatiquement le menu en parcourant l'arborescence et inclut un champ de recherche pour filtrer rapidement les sections.
+Pour contourner les restrictions des navigateurs sur les fichiers locaux, servez le dépôt via un petit serveur HTTP :
+
+```bash
+python -m http.server
+```
+
+Puis ouvrez [http://localhost:8000/documentation/cycle1-textile/index.html](http://localhost:8000/documentation/cycle1-textile/index.html) dans votre navigateur.
+
