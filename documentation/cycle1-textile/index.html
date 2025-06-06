@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Programme Cycle Textile</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.3.0/github-markdown.min.css">
+<style>
+  body { display: flex; font-family: sans-serif; margin: 0; }
+  #nav { width: 300px; max-height: 100vh; overflow-y: auto; border-right: 1px solid #ccc; padding: 1rem; }
+  #content { flex: 1; padding: 1rem; }
+  details { margin-left: 1rem; }
+  a { cursor: pointer; color: #0366d6; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <nav id="nav"></nav>
+  <main id="content" class="markdown-body"></main>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+async function loadTree() {
+  const res = await fetch('fileIndex.json');
+  const tree = await res.json();
+  buildNav(tree.children, document.getElementById('nav'));
+  // Load overview by default
+  loadMarkdown('README.md');
+}
+
+function buildNav(nodes, container) {
+  nodes.forEach(node => {
+    if (node.type === 'directory') {
+      const details = document.createElement('details');
+      const summary = document.createElement('summary');
+      summary.textContent = formatName(node.name);
+      details.appendChild(summary);
+      buildNav(node.children, details);
+      container.appendChild(details);
+    } else if (node.type === 'file') {
+      const link = document.createElement('a');
+      link.textContent = formatName(node.name);
+      link.onclick = () => loadMarkdown(node.path);
+      const div = document.createElement('div');
+      div.style.marginLeft = '1rem';
+      div.appendChild(link);
+      container.appendChild(div);
+    }
+  });
+}
+
+async function loadMarkdown(path) {
+  const res = await fetch(path);
+  const text = await res.text();
+  document.getElementById('content').innerHTML = marked.parse(text);
+  window.scrollTo(0,0);
+}
+
+function formatName(name) {
+  return name.replace(/-/g, ' ').replace(/\.md$/, '');
+}
+
+loadTree();
+</script>
+</body>
+</html>
